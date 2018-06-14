@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <% @books.each do |book| %>
+    <div class="book row">
+      <div class="col-md-4">
+        <td><strong><%= book.title %></strong></td>
+      </div> 
+      <div class="col-md-4">
+        <td><em><%= book.author %></em></td>
+      </div> 
+      <div class="col-md-1 offset-1">
+        <%= link_to 'Show', book, :class => "btn btn-info" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-primary" %>
+      </div>
+      <div class="col-md-1">
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+      </div>
+    </div>
+    <hr class="book-underline">
+  <% end %>
+</div>
+
+
+
+<%= link_to 'Add New Book', new_book_path , :class => "btn btn-primary"%>

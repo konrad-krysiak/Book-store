@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag @book.image.url(:medium) %>
+		</div>
+
+		<div class="col-md-8">
+			<p>
+			  <strong>Title:</strong>
+			  <%= @book.title %>
+			</p>
+
+			<p>
+			  <strong>Author:</strong>
+			  <%= @book.author %>
+			</p>
+
+			<p>
+			  <strong>Description:</strong>
+			  <%= @book.description %>
+			</p>
+			<%= link_to 'Edit', edit_book_path(@book), class: "btn btn-primary" %>
+			<%= link_to 'Back', books_path, class: "btn btn-info" %>
+		</div>
+	</div>
+
+
+	<br><br><br>
+
+	<div class="row">
+		<div class="col-md-12">
+			
+			<em><strong> (<span id="infos_count"><%= @book.infos.count %></span>) additional informations. </strong></em>
+			<br><br>
+			<div id="book_infos">
+				<%= render @book.infos %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<%= form_for([@book, @book.infos.build], remote: true) do |i| %>
+
+				<div class="form-group">
+					<%= i.label :title %>
+					<%= i.text_field :title, id: "title_field", class: 'form-control'%>
+				</div>
+
+				<div class="form-group">
+					<%= i.label :content %>
+					<%= i.text_area :content, id: "content_field", class: 'form-control'%>	
+				</div>
+
+				<%= i.submit class: 'btn btn-primary'%>
+			<% end %>
+
+		</div>
+	</div>
+
+
+</div>
+
+
+

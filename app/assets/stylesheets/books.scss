@@ -1,0 +1,20 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+
+}
+.book:first-child {
+	padding-top: 30px;
+}
+.book-underline {
+	padding: 20px 0px 0px 0px;
+}
+.info-underline {
+	padding: 0px 0px 15px 0px;
+}
+.info-underline:last-child {
+	display: none;
+}

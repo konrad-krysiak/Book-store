@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-6">
+		<strong> <%= info.title %> </strong>
+		<p>
+			<%= info.content %> <br>
+			<em>
+				Posted <%= time_ago_in_words(info.created_at) %> ago
+			</em>
+		</p>
+	</div>
+
+	<div class="col-md-3 offset-3">
+		<%= link_to 'Destroy', [info.book, info], method: :delete, :class => "btn btn-danger" %>
+	</div>
+</div>
+<hr class="info-underline">
+
+
